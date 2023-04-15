@@ -136,14 +136,14 @@ The University of California Santa Cruz (UCSC) genome browser (genome.ucsc.edu) 
 
 Genes with larger average expression have on average larger observed variances across samples. This means the genes have different scatter because the genes with larger average expression vary in expression from sample to sample more than genes with lower average expression. We can observe this relationship from the figures below, but we should note that the logarithmic transformations creates a margin of error by over-adjusting so that large log-counts have smaller scatter than small log-counts. Additionally, scatter tends to get smaller as we increase the number of replicates. This is because standard deviations of averages are smaller than standard deviations of individual observations. Hence, if we were to have more replicates than our current amount of 2, then we would produce more accurate estimates of group means. 
 
-![BCV vs Average log CPM of Replicate 1](MV_rep1.png)
-![BCV vs Average log CPM of Replicate 2](MV_rep2.png)
+![BCV vs Average log CPM of Replicate 1](./images/MV_rep1.png)
+![BCV vs Average log CPM of Replicate 2](./images/MV_rep2.png)
 
 To gain a better understanding of the variance of our selected genes, we plot mean vs variance here as the average log CPM is the mean expression value plotted against the coefficient of variation. In the code above using edgeR, a common dispersion is estimated for all the tags and then the tagwise dispersions are squeezed towards the common or trended dispersion. The trend and common lines tells us the magnitude of the dispersions before it estimates the tagwise values. Biological CV (BCV) is the coefficient of variation with the true abundance of the gene varying between replicate RNA samples (Dispersion estimates = BCV squared). The BCV value is the percentage of variation observed in the true abundance of a gene between replicates. Our common BCV was 0.60 which would indicate that the true abundance for a gene can vary by 60% up or down between replicates. In our plot, we see that the scatter in the two replicate datasets for tag-wise estimates is large for low expressor genes, and BCV values range very high.
 
 So far we have calculated the count data, obtained sample grou information, normalized factors for each sample, and calculated dispersion estimates. For the next step, we will set the threshold of FDR < 0.05 to select genes as siginificantly differentially expressed between the samples. 
 
-![Differential Expression of E14.5epi.rep1, E14.5fiber.rep1, P0.5epi.rep1, P0.5fiber.rep1 Results](genes_matrix.png)
+![Differential Expression of E14.5epi.rep1, E14.5fiber.rep1, P0.5epi.rep1, P0.5fiber.rep1 Results](./images/genes_matrix.png)
 
 
 ## Identification of DARS from DEGS
