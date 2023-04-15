@@ -36,6 +36,7 @@ The 75-bp paired-end ATAC-seq reads are trimmed by trimmomatic (v 0.39) to remov
 
 We then do quality control on our SAM/BAM files by calculating the fragment sizes. This is because the fragment size is very sensitive to the concentration of the sample's DNA and the variation of fragment sizes is often large. Since alignment libraries like bowtie2 uses overlapping paired end reads to produce longer continuous sequences (75 bp + ~100 unsequenced bp + 75 bp). Small fragment sizes would mean fewer long reads which could result in the presence of adapter at the end of the read despite trimming. We can use bamPEFragmentSize to check if our paired-end samples have fragment sizes long enough for this possibility to be minimized. This module in particular summarizes the statistic of the reads. Drawing from the results below, our framgment length had a mean of 105.65 bp, which is about the same size of our unsequenced bp. This shows that the adapter regions have been successfully trimmed and therefore passes the quality check. Our calculated TSS score was 13.7, which is above the ideal condition of TSS score 7, hence passes our quality check.
 
+
 ![Fragment Size](./images/fragmentSize.png)
 
 
@@ -44,8 +45,8 @@ We then do quality control on our SAM/BAM files by calculating the fragment size
 
 Transcription Start Site (TSS) Enrichment Score is a signal to noise ratio used to evaluate ATAC-seq. The signal (desired signal) represents the combined distributions of reads centered on the reference TSSs and the noise (background noise) represents the distributions of reads flanking/next to the reference TSSs. A typical TSS score vs distance to TSS plot would have a peak in the middle with high TSS scores at transcription start sites (highly open regions of the genome) [3]. The center signal value is our TSS enrichment metric used to evaluate ATAC-seq. Additionally, we split the reads into nucleosome free, mononucleosome, dinucleosome, and trinucleosome and discard the rest, as these reads are most usable and unbiased for interpreting functional dynamic of nucleosomes.
 
-![featurecount for original TSS regions](./images/featurecount E-epi-rep1.jpg)
-![featurecount result for 100 bp +/- flanking regions](./images/featurecount 100.jpg)
+![featurecount for original TSS regions](./images/featurecount-E-epi-rep1.jpg)
+![featurecount result for 100 bp +/- flanking regions](./images/featurecount-100.jpg)
 
 
 ### Quality Control: ATACseqQC
