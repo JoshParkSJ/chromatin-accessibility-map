@@ -98,8 +98,8 @@ The factorFootprints function predicts the binding sites using the input positio
 
 V-plot is a plot that visualizes fragment midpoint vs length for a given transcription factors. Since our sample represents a sampling distribution, the distinction of the V is barely visible. The true population dataset would show a much more distinct V shape in the plot which reveals chromatin features of transcription binding sites. The dots represent the midpoint of each paired-end fragment. The Y-axis represents its length and the x-axis represents the distance of its midpoint from the center of the genomic feature. The V-shape comes from the left diagonal line which is the fragments cleaved precisely to the right of the transcription-protected region (chromatin closed regions). The vice versa is also true, which gives this left and right diagonal shape to form a V.
 
-![vPlot](./images/v-plot-true.jpg)
-![vPlot](./images/v-plot.jpg)
+![vPlot](./images/V-plot-true.jpg)
+![vPlot](./images/V-plot.jpg)
 
 ## Analysis Continues: Calling Peaks
 
